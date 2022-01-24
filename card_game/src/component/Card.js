@@ -44,8 +44,10 @@ function Card() {
 
     useEffect(() => {
         if(dealNum >0 ){
-       card_index = Math.floor(Math.random() * deckcards.length)
-        let card=deckcards[card_index]
+        card_index = Math.floor(Math.random() * deckcards.length)
+        let card=deckcards[card_index];
+        deckcards.splice(card_index,1);
+        setdeckcards([...deckcards]);
         setCC(cc => [...cc, card])
         }
     },[pc]);
@@ -57,6 +59,7 @@ function Card() {
         setDealNum(1)
         card_index = Math.floor(Math.random() * deckcards.length)
         let card=deckcards[card_index]
+        deckcards.splice(card_index,1)
         setdeckcards([...deckcards]);
         //update dealcount 
 
@@ -68,17 +71,17 @@ function Card() {
         <div>
             <label >Computer cards</label>
             <div className="p-10 grid grid-cols-3 gap-2">
-                {cc.map((a)=>{
+                {cc.map((a,index)=>{
                     let name=a.value+a.suit[0].toUpperCase()+'.png'
-                    return (<div className="rounded overflow-hidden shadow-lg  "><img className="h-25 w-40" src={name} alt={name}></img></div>)})
+                    return (<div className="rounded overflow-hidden shadow-lg  " key={index}><img className="h-25 w-40" src={name} alt={name}></img></div>)})
                 }
 
             </div>
             <label >Player cards</label>
             <div className="p-10 grid grid-cols-3 gap-2">
-                {pc.map((a)=>{
+                {pc.map((a,index)=>{
                     let name=a.value+a.suit[0].toUpperCase()+'.png'
-                    return (<div className="rounded overflow-hidden shadow-lg  "><img className="h-25 w-40" src={name} alt={name}></img></div>)})
+                    return (<div className="rounded overflow-hidden shadow-lg  " key={index}><img className="h-25 w-40" src={name} alt={name}></img></div>)})
                 }
 
             </div>
