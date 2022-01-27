@@ -1,7 +1,8 @@
 import React from "react";
 import {useRef} from "react";
 import {useDispatch} from "react-redux";
-import {sendMsg} from './actions/Action';
+//import {sendMsg} from './actions/Action';
+import {sendMsg} from './actions/Thunkaction';
 function Message(){
     const msg=useRef();
     const dispatch=useDispatch();
