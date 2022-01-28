@@ -1,5 +1,0 @@
-function ShoppingComponent(props){
-    return(
-        
-    );
-}
