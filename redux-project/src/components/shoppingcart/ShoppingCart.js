@@ -30,8 +30,8 @@ function onClickHandler(idRec){
         <div>
             <h1>MY SHOPPING STORE</h1>
             <div className=" flex flex-row flex-wrap space-x-15 space-y-25">
-                {shop.map((i)=>{return (<div><img src={i.image} className="w-24 h-24 m-9"></img>
-                <button onClick={()=>{onClickHandler(i.id)}}>Add to Cart </button></div>
+                {shop.map((i)=>{return (<div className="border-2 rounded"><img src={i.image} className="w-24 h-24 m-9"></img>
+                <button className="border-2 rounded bg-yellow-200" onClick={()=>{onClickHandler(i.id)}}>Add to Cart </button></div>
                 )})}
             </div>
         </div>

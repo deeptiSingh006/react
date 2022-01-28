@@ -1,6 +1,11 @@
 //Action Creator 
 import axios from 'axios';
 export  const updTxn = (txn) =>{
+
+    /*return { 
+        type:'UPDATE_TXN',
+        payload: txn
+        }*/
     return function(dispatch,getState){
         axios.get("https://jsonplaceholder.typicode.com/users")
         .then((response)=>{
@@ -9,7 +14,6 @@ export  const updTxn = (txn) =>{
                 type:'UPDATE_TXN',
                 payload: txn
                 });
-            }
-            );
+            });
     }
 }
